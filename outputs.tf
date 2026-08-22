@@ -1,7 +1,3 @@
-output "sagemaker_model_card_export_jobs_id" {
-  description = "Map of id values across all sagemaker_model_card_export_jobs, keyed the same as var.sagemaker_model_card_export_jobs"
-  value       = { for k, v in aws_sagemaker_model_card_export_job.sagemaker_model_card_export_jobs : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "sagemaker_model_card_export_jobs_export_artifacts" {
   description = "Map of export_artifacts values across all sagemaker_model_card_export_jobs, keyed the same as var.sagemaker_model_card_export_jobs"
   value       = { for k, v in aws_sagemaker_model_card_export_job.sagemaker_model_card_export_jobs : k => v.export_artifacts if v.export_artifacts != null && length(v.export_artifacts) > 0 }
